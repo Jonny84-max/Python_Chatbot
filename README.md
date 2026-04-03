@@ -35,7 +35,7 @@ cd Python_Chatbot
 
 ## Virtual environment
 python -m venv venv
-venv\Scripts\activate
+venv/scripts/activate
 
 ## Requirements
 pip install -r requirements.txt
