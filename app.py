@@ -32,7 +32,7 @@ def run_gradio():
         title="Python_Chatbot (Gradio)",
         description="descripton_"  # reuse common description
     )
-    iface.launch(share=True)  # Launch Gradio app
+    iface.launch()  # Launch Gradio app
 
 # Choose Platform
 platform = "streamlit"  # change to "gradio" to run Gradio instead
