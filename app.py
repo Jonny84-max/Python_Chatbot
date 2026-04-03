@@ -16,7 +16,7 @@ def Python_Chatbot(name):
     
 # Streamlit interface
 def run_streamlit():
-    st.title("Python_Chatbot (Streamlit)")
+    st.title("Python_Chatbot")
     st.text(Description_)  # reuse common description
     name = st.text_input("Hello! What is your name?")   # Get user input
     if name:
