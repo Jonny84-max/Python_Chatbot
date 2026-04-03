@@ -11,11 +11,14 @@ Deployed for online access
 ## Live Demo
 [Mini Interactive Chatbot](https://huggingface.co/spaces/jonnybest-0684/Python_Chatbot)
 
+![Chatbot App interface](https://github.com/user-attachments/assets/0a3be0d5-4407-4eaf-9c3b-067cabd10434)
+![Chatbot interaction with User](https://github.com/user-attachments/assets/511d043d-32fb-4258-9b21-0dc9b5ea9d67)
+
 ## Run Locally
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Jonnybest-0684/Python_Chatbot.git
+git clone https://github.com/Jonny84-max/Python_Chatbot.git
 cd Python_Chatbot
 
 ## Methodology
