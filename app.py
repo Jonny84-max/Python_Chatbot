@@ -1,5 +1,10 @@
 import datetime  # to get current date and time
 import streamlit as st  # to create the chatbot interface
+import gradio as gr     # gradio interface  
+
+# Common title and description
+Title_ = "Python_Chatbot"
+Description_ = "A simple chatbot that greets you and shows the current date and time in WAT."
 
 # simple function that takes user's name and responds
 def Simple_chatbot(name):
@@ -8,13 +13,32 @@ def Simple_chatbot(name):
     date = now.strftime('%B %d, %Y')
     time = now.strftime('%I:%M %p')
     return f"Nice to meet you, {name}! Today's date is {date} and the current time in WAT is {time}." # return greeting + current date and time
-
+    
 # Streamlit interface
-st.title("Python_Chatbot")
-st.write("A simple chatbot that greets you and reminds you today's date and time in WAT.")
+def run_streamlit():
+    st.title("Python_Chatbot (Streamlit)")
+    st.text(Description_)  # reuse common description
+    name = st.text_input("Hello! What is your name?")   # Get user input
+    if name:
+        response = Python_Chatbot(name)  # Respond when button is pressed
+        st.text(response)   # chatbot reply
 
-name = st.text_input("Hello! What is your name?")   # Get user input
+# Gradio Interface
+def run_gradio():
+    iface = gr.Interface(
+        fn=Simple_chatbot,
+        inputs=gr.Textbox(label="Hello! What is your name?"),
+        outputs=gr.Textbox(label="Response"),
+        title="Python_Chatbot (Gradio)",
+        description="descripton_"  # reuse common description
+    )
+    iface.launch(share=True)  # Launch Gradio app
 
-if st.button("Say Hello") # Respond when button is pressed
-    response = Simple_chatbot(name)
-    st.text(response)  # chatbot reply
+# Choose Platform
+platform = "streamlit"  # change to "gradio" to run Gradio instead
+if platform.lower() == "gradio":
+    run_gradio()
+elif platform.lower() == "streamlit":
+    run_streamlit()
+else:
+    print("Unknown platform! Choose 'gradio' or 'streamlit'.")
