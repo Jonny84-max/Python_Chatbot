@@ -1,5 +1,5 @@
 import datetime  # to get current date and time
-import gradio as gr  # to create the chatbot interface
+import streamlit as st  # to create the chatbot interface
 
 # simple function that takes user's name and responds
 def Simple_chatbot(name):
@@ -9,13 +9,12 @@ def Simple_chatbot(name):
     time = now.strftime('%I:%M %p')
     return f"Nice to meet you, {name}! Today's date is {date} and the current time in WAT is {time}." # return greeting + current date and time
 
-# build the interface
-iface = gr.Interface(
-    fn=Simple_chatbot,  # function to run
-    inputs=gr.Textbox(label="Hello! What is your name?"),  # user input
-    outputs=gr.Textbox(label="Response"),  # chatbot reply
-    title="Python_Chatbot",
-    description="A simple chatbot that greets you and reminds you today's date and time in WAT."
-)
+# Streamlit interface
+st.title("Python_Chatbot")
+st.write("A simple chatbot that greets you and reminds you today's date and time in WAT.")
 
-iface.launch(share=True)  # lunch the app
+name = st.text_input("Hello! What is your name?")   # Get user input
+
+if st.button("Say Hello") # Respond when button is pressed
+    response = Simple_chatbot(name)
+    st.text(response)  # chatbot reply
