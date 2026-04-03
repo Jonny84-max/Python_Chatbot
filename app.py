@@ -18,4 +18,4 @@ iface = gr.Interface(
     description="A simple chatbot that greets you and reminds you today's date and time in WAT."
 )
 
-iface.launch()  # lunch the app
+iface.launch(share=True)  # lunch the app
