@@ -7,7 +7,7 @@ Title_ = "Python_Chatbot"
 Description_ = "A simple chatbot that greets you and shows the current date and time in WAT."
 
 # simple function that takes user's name and responds
-def Simple_chatbot(name):
+def Python_Chatbot(name):
     wat = datetime.timezone(datetime.timedelta(hours=1))  # set timezone to West Africa Time (UTC+1)
     now = datetime.datetime.now(wat) # get current time in WAT
     date = now.strftime('%B %d, %Y')
